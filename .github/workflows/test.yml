@@ -7,7 +7,6 @@ on:
 jobs:
   login:
     runs-on: ubuntu-latest
-    container: 'adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest'
     steps:
       -
         name: login to jfrog
@@ -16,3 +15,4 @@ jobs:
           registry: adeo-docker-adeo-software-factory-release.jfrog.io
           username: 20014731
           password: cmVmdGtuOjAxOjE2OTA0NjE2Mzk6ZXJOOVdzVTU2eU1OQXZwM2xBSDMwaWpiaFJS
+      container: 'adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest'
