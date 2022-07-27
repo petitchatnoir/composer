@@ -12,3 +12,7 @@ jobs:
       credentials:
         username: ${{ secrets.JFROG_USERNAME }}
         password: ${{ secrets.JFROG_TOKEN }}
+
+    steps:
+      - name: hello
+        run: echo "$GITHUB_CONTEXT"
