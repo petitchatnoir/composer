@@ -14,5 +14,6 @@ jobs:
         password: ${{ secrets.JFROG_TOKEN }}
 
     steps:
-      - name: build
-        run: "ls $GITHUB_WORKSPACE"
+      - name: container ls $HOME
+          with: { entrypoint: "/bin/sh" , args: '-c "ls -la $HOME"' }
+          uses: "docker://alpine:latest"
