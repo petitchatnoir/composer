@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: hello
-        run: echo "$GITHUB_CONTEXT"
+        run: echo "hello"
