@@ -13,5 +13,12 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: adeo-docker-adeo-software-factory-release.jfrog.io
-          username: "${{ secrets.JFROG_USERNAME }}"
-          password: "${{ secrets.JFROG_TOKEN }}"
+          username: ${{ secrets.JFROG_USERNAME }}
+          password: ${{ secrets.JFROG_TOKEN }}
+
+  get_img:
+    runs-on: ubuntu-latest
+    container: adeo-docker-adeo-software-factory-release.jfrog.io
+    steps:
+      - name: hello
+        run: echo "hello world"
