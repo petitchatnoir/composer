@@ -15,3 +15,4 @@ jobs:
           registry: adeo-docker-adeo-software-factory-release.jfrog.io
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_TOKEN }}
+          
