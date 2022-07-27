@@ -14,6 +14,10 @@ jobs:
         password: ${{ secrets.JFROG_TOKEN }}
 
     steps:
-      - name: container ls $HOME
-          with: { entrypoint: "/bin/sh" , args: '-c "ls -la $HOME"' }
-          uses: "docker://alpine:latest"
+      - name: machine ls $GITHUB_EVENT_PATH
+        run: "ls -la $GITHUB_EVENT_PATH"
+      - name: machine ls $GITHUB_WORKSPACE
+        run: "ls -la $GITHUB_WORKSPACE"
+      - name: machine ls $HOME
+        working-directory: "."
+        run: "ls -la $HOME"
