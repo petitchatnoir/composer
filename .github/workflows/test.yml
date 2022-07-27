@@ -1,4 +1,4 @@
-name: ci
+name: get_vault_creds
 
 on:
   push:
@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Login to Docker Hub
+        name: Login to JFrog
         uses: docker/login-action@v2
         with:
           registry: adeo-docker-adeo-software-factory-release.jfrog.io
-          username: ${{ secrets.JFROG_USERNAME }}
-          password: ${{ secrets.JFROG_TOKEN }}
+          username: ${{ dev.JFROG_USERNAME }}
+          password: ${{ dev.JFROG_TOKEN }}
