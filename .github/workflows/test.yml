@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: build
-        run: "ls -la $HOME"
+        run: "ls $GITHUB_WORKSPACE"
