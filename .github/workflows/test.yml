@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  Get Vault Secret:
+  get_vault_secret:
     runs-on: ubuntu-latest
     container: 'adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest'
-    
+
     steps:
         - name: Build vault
           run: ./build
