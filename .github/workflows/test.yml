@@ -10,11 +10,7 @@ jobs:
   Get Vault Secret:
     runs-on: ubuntu-latest
     container: 'adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest'
-    artifacts:
-      paths:
-        - vault.token.enc
-        - vault-ci-tools/
-      expire_in: "600"
+    
     steps:
         - name: Build vault
           run: ./build
