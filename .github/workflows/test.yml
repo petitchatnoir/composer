@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     container: 'adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest'
 
-    steps:
-        - name: Build vault
-          run: ./build
+  steps:
+    - name: Login to Docker Hub
+      uses: adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest
+      with:
+        username: 20014731
+        password: cmVmdGtuOjAxOjE2OTA0NjE2Mzk6ZXJOOVdzVTU2eU1OQXZwM2xBSDMwaWpiaFJS
