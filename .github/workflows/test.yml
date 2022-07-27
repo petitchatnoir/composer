@@ -13,5 +13,5 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: adeo-docker-adeo-software-factory-release.jfrog.io
-          username: ${{ secrets.JFROG_USERNAME }}
+          username: 20014731
           password: ${{ secrets.JFROG_TOKEN }}
