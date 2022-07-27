@@ -25,12 +25,4 @@ jobs:
       expire_in: "600"
     script:
       - ./build
-    tags:
-      - vault
-      - factory
-    except:
-      - external_pull_requests
-    only:
-      refs:
-        - master
-        - develop
+    
