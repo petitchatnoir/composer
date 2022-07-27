@@ -8,7 +8,7 @@ jobs:
   login:
     runs-on: ubuntu-latest
     container:
-      image: adeo-docker-adeo-software-factory-release.jfrog.io
+      image: adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest
       credentials:
         username: ${{ secrets.JFROG_USERNAME }}
         password: ${{ secrets.JFROG_TOKEN }}
