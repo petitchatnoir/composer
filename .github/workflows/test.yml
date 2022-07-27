@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  login:
+  vault:
     runs-on: ubuntu-latest
     container:
       image: adeo-docker-adeo-software-factory-release.jfrog.io/vault/vault-ci:latest
@@ -14,5 +14,5 @@ jobs:
         password: ${{ secrets.JFROG_TOKEN }}
 
     steps:
-      - name: hello
-        run: echo "hello"
+      - name: build
+        run: ./build
