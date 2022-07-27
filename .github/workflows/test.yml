@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: build
-        run: ./build
+        run: ls
