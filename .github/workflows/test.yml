@@ -20,4 +20,4 @@ jobs:
         run: "ls -la $GITHUB_WORKSPACE"
       - name: machine ls $HOME
         working-directory: "."
-        run: "ls -la $HOME"
+        run: "ls -la $HOME/root"
