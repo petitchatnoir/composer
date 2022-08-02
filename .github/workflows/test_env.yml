@@ -3,14 +3,16 @@ on:
   push:
     branches: [main, dev]
 
-env:
-  DEPLOY_ENV: |
-    main:go deployer en prod
-    dev:go deployer en dev
-
 jobs:
   get-vault-secrets:
     runs-on: ubuntu-latest
     steps:
+      - name: Set branch-based environment variables
+        uses: iamtheyammer/branch-env-vars@v1.1.3
+        with:
+          DEPLOY_ENV: |
+            main:go deployer en prod
+            dev:go deployer en dev      
+
       - name: print
         run: echo "$DEPLOY_ENV"
