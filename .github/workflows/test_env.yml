@@ -10,6 +10,7 @@ jobs:
       - name: Set branch-based environment variables
         uses: iamtheyammer/branch-env-vars@v1.1.3
         with:
+          bevOverwrite: true
           DEPLOY_ENV: |
             main:go deployer en prod
             dev:go deployer en dev      
