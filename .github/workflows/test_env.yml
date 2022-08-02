@@ -1,0 +1,12 @@
+name: Deploy Airflow DAGS
+on:
+  push:
+    branches: dev
+
+jobs:
+  get-vault-secrets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "hello world"
