@@ -1,12 +1,16 @@
 name: Deploy Airflow DAGS
 on:
   push:
-    branches: dev
+    branches: [main, dev]
+
+env:
+  DEPLOY_ENV: |
+    main:go deployer en prod
+    dev:go deployer en dev
 
 jobs:
   get-vault-secrets:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Say hello
-        run: echo "hello world"
+      - name: print
+        run: echo "$DEPLOY_ENV"
