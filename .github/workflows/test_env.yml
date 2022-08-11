@@ -1,19 +1,23 @@
-name: Deploy Airflow DAGS
+name: Test
 on:
   push:
-    branches: [main, dev]
+    branches: dev
+
+defaults:
+  run:
+    shell: bash
+    working-directory: .
 
 jobs:
-  get-vault-secrets:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set branch-based environment variables
-        uses: iamtheyammer/branch-env-vars@v1.1.3
-        with:
-          bevOverwrite: true
-          DEPLOY_ENV: |
-            main:go deployer en prod
-            dev:go deployer en dev      
+  deploy:
+    runs-on: [self-hosted, Linux, standard]
 
-      - name: print
-        run: echo "$DEPLOY_ENV"
+    steps:
+      - name: Ping ext
+        run: ping 104.155.74.0 -t 4
+        
+      - name: Ping pub
+        run: ping 172.16.0.34 -t 4
+
+      - name: Override Airflow configuration
+        run: gcloud composer environments run $COMPOSER_ENV --location=$REGION variables import -- "/home/airflow/gcs/data/$AIRFLOW_CONFIG_FILE"
